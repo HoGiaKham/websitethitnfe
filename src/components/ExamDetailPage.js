@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { fetchTestExamQuestions, addManualTestQuestion, addBulkTestQuestions, deleteTestQuestion, updateTestQuestionPoints, fetchBankQuestions } from "../api";
 import "../styles/ExamDetailPage.css";
 
-const BASE_URL = "${import.meta.env.VITE_API_BASE_URL}/api";
+const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api`;
 
 function ExamDetailPage() {
   const { examId } = useParams();

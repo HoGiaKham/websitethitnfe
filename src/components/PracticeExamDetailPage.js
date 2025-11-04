@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/PracticeExamDetailPage.css";
 
-const BASE_URL = "${import.meta.env.VITE_API_BASE_URL}/api";
+const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api`;
 
 function PracticeExamDetailPage({ setPage }) {
   const { examId } = useParams();

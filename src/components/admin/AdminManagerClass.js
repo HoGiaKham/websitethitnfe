@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../styles/AdminManagerClass.css";
 
-const API_BASE = "${import.meta.env.VITE_API_BASE_URL}/api";
+const API_BASE = `${import.meta.env.VITE_API_BASE_URL}/api`;
 
 function AdminManagerClass() {
   const [classes, setClasses] = useState([]);

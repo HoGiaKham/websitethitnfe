@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import "../styles/CategoryPage.css";
 
-const API_URL = "${import.meta.env.VITE_API_BASE_URL}/api";
+const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api`;
 
 function CategoryPage({ onSelectCategory, selectedSubjectId, onSelectSubject }) {
   const [allSubjects, setAllSubjects] = useState([]);
