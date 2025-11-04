@@ -19,7 +19,7 @@ function StudentPage({ studentUsername }) {
       }
 
       try {
-        const classesRes = await axios.get("http://localhost:5000/api/classes");
+        const classesRes = await axios.get("${import.meta.env.VITE_API_BASE_URL}/api/classes");
         const allClasses = classesRes.data;
 
         const myClasses = allClasses.filter(cls =>
@@ -135,7 +135,7 @@ useEffect(() => {
       }
 
       const res = await axios.get(
-        "http://localhost:5000/api/practice-exams/by-class-subject",
+        "${import.meta.env.VITE_API_BASE_URL}/api/practice-exams/by-class-subject",
         {
           params: { classId: classInfo._id, subjectId } // Dùng params → an toàn
         }

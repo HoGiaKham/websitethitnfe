@@ -18,7 +18,7 @@ function StudentTestExamsPage({ studentUsername }) {
 
       try {
         // 1. Lấy tất cả lớp
-        const classesRes = await axios.get("http://localhost:5000/api/classes");
+        const classesRes = await axios.get("${import.meta.env.VITE_API_BASE_URL}/api/classes");
         const allClasses = classesRes.data;
 
         // 2. Lọc lớp của sinh viên
@@ -30,7 +30,7 @@ function StudentTestExamsPage({ studentUsername }) {
         const examPromises = myClasses.map(async (cls) => {
           try {
             const res = await axios.get(
-              "http://localhost:5000/api/test-exams/student/published",
+              "${import.meta.env.VITE_API_BASE_URL}/api/test-exams/student/published",
               { params: { studentClassId: cls._id } }
             );
             return res.data.map(exam => ({

@@ -23,7 +23,7 @@ const AdminManagerStudent = () => {
 
   const fetchStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/users");
+      const res = await axios.get("${import.meta.env.VITE_API_BASE_URL}/api/users");
       const studentData = res.data.filter((u) => u.role === "student");
       const sorted = studentData.sort((a, b) =>
         a.username.localeCompare(b.username)
@@ -37,7 +37,7 @@ const AdminManagerStudent = () => {
   const handleDelete = async (id, name) => {
     if (window.confirm(`Bạn có chắc muốn xóa sinh viên "${name}" không?`)) {
       try {
-        await axios.delete(`http://localhost:5000/api/users/${id}`);
+        await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/users/${id}`);
         setStudents((prev) => prev.filter((s) => s._id !== id));
         alert("✅ Xóa sinh viên thành công!");
       } catch (error) {
@@ -50,7 +50,7 @@ const AdminManagerStudent = () => {
   const handleAddStudent = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/users", {
+      const res = await axios.post("${import.meta.env.VITE_API_BASE_URL}/api/users", {
         ...newStudent,
         role: "student",
       });

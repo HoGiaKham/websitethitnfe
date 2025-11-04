@@ -64,10 +64,10 @@ const ExamSummary = () => {
 
                   {q.imgageURL && (
                       <img
-                      src={`http://localhost:5000/images/${q.imgageURL}`}
+                      src={`${import.meta.env.VITE_API_BASE_URL}/images/${q.imgageURL}`}
                       alt={`Câu ${i+1}`}
                                     style={{ maxWidth: "150px", maxHeight: "150px", borderRadius: "6px", objectFit: "contain" }}
-              onClick={() => window.open(`http://localhost:5000${q.imageUrl}`, "_blank")}
+              onClick={() => window.open(`${import.meta.env.VITE_API_BASE_URL}${q.imageUrl}`, "_blank")}
                       />
                   )}
                 </div>  

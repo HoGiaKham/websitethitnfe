@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/PracticeExamDetailPage.css";
 
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "${import.meta.env.VITE_API_BASE_URL}/api";
 
 function PracticeExamDetailPage({ setPage }) {
   const { examId } = useParams();
@@ -521,7 +521,7 @@ if (imageFile) {
                       }}
                     >
                       <img
-                        src={`http://localhost:5000${question.imageUrl}`}
+                        src={`${import.meta.env.VITE_API_BASE_URL}${question.imageUrl}`}
                         alt="question"
                         style={{
                           maxWidth: "100%",
@@ -532,7 +532,7 @@ if (imageFile) {
                           cursor: "pointer",
                         }}
                         onClick={() => {
-                          window.open(`http://localhost:5000${question.imageUrl}`, "_blank");
+                          window.open(`${import.meta.env.VITE_API_BASE_URL}${question.imageUrl}`, "_blank");
                         }}
                       />
                     </div>
@@ -912,7 +912,7 @@ if (imageFile) {
                                   {question.imageUrl && (
                                     <div style={{ marginBottom: "12px", marginLeft: "10px" }}>
                                       <img
-                                        src={`http://localhost:5000${question.imageUrl}`}
+                                        src={`${import.meta.env.VITE_API_BASE_URL}${question.imageUrl}`}
                                         alt="question image"
                                         style={{
                                           maxWidth: "100%",

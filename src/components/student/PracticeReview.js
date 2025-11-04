@@ -16,12 +16,12 @@ const ExamReview = () => {
     const fetchExamData = async () => {
       try {
         // Lấy thông tin đề thi
-        const examRes = await axios.get(`http://localhost:5000/api/practice-exams/${examId}`);
+        const examRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/practice-exams/${examId}`);
         setExamInfo(examRes.data);
 
         // Lấy câu hỏi
         const questionsRes = await axios.get(
-          `http://localhost:5000/api/practice-exams/${examId}/questions`
+          `${import.meta.env.VITE_API_BASE_URL}/api/practice-exams/${examId}/questions`
         );
         setQuestions(questionsRes.data || []);
       } catch (err) {

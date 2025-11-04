@@ -15,11 +15,11 @@ function ExamPage() {
     const fetchExamDetails = async () => {
       try {
         // Lấy thông tin đề
-        const examRes = await axios.get(`http://localhost:5000/api/practice-exams/${examId}`);
+        const examRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/practice-exams/${examId}`);
         setExamInfo(examRes.data);
 
         // Lấy danh sách câu hỏi
-        const questionsRes = await axios.get(`http://localhost:5000/api/practice-exams/${examId}/questions`);
+        const questionsRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/practice-exams/${examId}/questions`);
         setQuestions(questionsRes.data || []);
       } catch (err) {
         console.error("Lỗi khi tải đề thi:", err);

@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { fetchTestExamQuestions, addManualTestQuestion, addBulkTestQuestions, deleteTestQuestion, updateTestQuestionPoints, fetchBankQuestions } from "../api";
 import "../styles/ExamDetailPage.css";
 
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "${import.meta.env.VITE_API_BASE_URL}/api";
 
 function ExamDetailPage() {
   const { examId } = useParams();
@@ -482,7 +482,7 @@ function ExamDetailPage() {
                     {questionData.imageUrl && (
                       <div className="question-image">
                         <img
-                          src={`http://localhost:5000${questionData.imageUrl}`}
+                          src={`${import.meta.env.VITE_API_BASE_URL}${questionData.imageUrl}`}
                           alt="question"
                         />
                       </div>

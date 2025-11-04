@@ -23,11 +23,11 @@ function ExamPage() {
   useEffect(() => {
     const fetchExamDetails = async () => {
       try {
-        const examRes = await axios.get(`http://localhost:5000/api/practice-exams/${examId}`);
+        const examRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/practice-exams/${examId}`);
         setExamInfo(examRes.data);
 
         const questionsRes = await axios.get(
-          `http://localhost:5000/api/practice-exams/${examId}/questions`
+          `${import.meta.env.VITE_API_BASE_URL}/api/practice-exams/${examId}/questions`
         );
         setQuestions(questionsRes.data || []);
       } catch (err) {

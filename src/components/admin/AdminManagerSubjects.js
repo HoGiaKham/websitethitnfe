@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../styles/AdminManagerSubjects.css";
 
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "${import.meta.env.VITE_API_BASE_URL}/api";
 
 const AdminManagerSubjects = () => {
   const [subjects, setSubjects] = useState([]);

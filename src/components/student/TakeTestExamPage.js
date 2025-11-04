@@ -53,7 +53,7 @@ function TakeTestExamPage() {
 
   const fetchExamForStudent = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/test-exams/student/${examId}/take`);
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/test-exams/student/${examId}/take`);
 
       if (!res.ok) {
         let errorMessage = "Không thể tải đề thi";
@@ -275,7 +275,7 @@ function TakeTestExamPage() {
 
               {question.imageUrl && (
                 <div className="question-image">
-                  <img src={`http://localhost:5000${question.imageUrl}`} alt="question" />
+                  <img src={`${import.meta.env.VITE_API_BASE_URL}${question.imageUrl}`} alt="question" />
                 </div>
               )}
 

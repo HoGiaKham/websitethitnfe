@@ -713,11 +713,11 @@ function QuestionPage({ categoryId, categoryName, subjectName, subjectId, onGoBa
                       {expandedQuestionId.includes(q._id) && q.imageUrl && (
                         <div style={{ marginBottom: "12px", marginTop: "10px" }}>
                           <img 
-                            src={`http://localhost:5000${q.imageUrl}`} 
+                            src={`${import.meta.env.VITE_API_BASE_URL}${q.imageUrl}`} 
                             alt="question" 
                             style={{ maxWidth: "100%", maxHeight: "200px", borderRadius: "8px", cursor: "pointer" }}
                             onClick={() => {
-                              setSelectedImage(`http://localhost:5000${q.imageUrl}`);
+                              setSelectedImage(`${import.meta.env.VITE_API_BASE_URL}${q.imageUrl}`);
                               setShowImageModal(true);
                             }}
                           />
